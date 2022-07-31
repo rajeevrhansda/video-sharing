@@ -20,9 +20,9 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 
 const Container = styled.div`
     flex: 1;
-    background-color: ${({theme})=> theme.bg};
+    background-color: ${({ theme }) => theme.bg};
     height: 100vh;
-    color:${({theme})=> theme.text};
+    color:${({ theme }) => theme.text};
     font-size: 14px;
     overflow: scroll;
     position: sticky;
@@ -50,7 +50,7 @@ const Item = styled.div`
 `;
 const Hr = styled.hr`
     margin: 15px 0px;
-    border: 0.5px solid  ${({theme})=> theme.soft};
+    border: 0.5px solid  ${({ theme }) => theme.soft};
 `;
 const Login = styled.div`
 
@@ -71,7 +71,7 @@ const Button = styled.button`
 `;
 
 
-function Menu() {
+function Menu({ darkMode, setDarkMode }) {
     return (
         <Container>
             <Wrapper>
@@ -149,6 +149,10 @@ function Menu() {
                 <Item>
                     <HelpOutlineOutlinedIcon />
                     Help
+                </Item>
+                <Item onClick={() => setDarkMode(!darkMode)}>
+                    <SettingsBrightnessOutlinedIcon />
+                    {darkMode ? "Light" : "Dark"} Mode
                 </Item>
             </Wrapper>
         </Container>
