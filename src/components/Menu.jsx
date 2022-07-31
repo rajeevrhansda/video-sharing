@@ -20,7 +20,7 @@ import SettingsBrightnessOutlinedIcon from "@mui/icons-material/SettingsBrightne
 
 const Container = styled.div`
     flex: 1;
-    background-color: ${({ theme }) => theme.bg};
+    background-color: ${({ theme }) => theme.bgLighter};
     height: 100vh;
     color:${({ theme }) => theme.text};
     font-size: 14px;
@@ -67,7 +67,12 @@ const Button = styled.button`
     display: flex;
     align-items: center;
     gap: 5px;
-
+`;
+const Title = styled.h2`
+    font-size: 14px;
+    font-weight: 500;
+    color: #aaa;
+    margin-bottom: 20px;
 `;
 
 
@@ -110,6 +115,11 @@ function Menu({ darkMode, setDarkMode }) {
                         SIGN IN
                     </Button>
                 </Login>
+                <Hr />
+
+                <Title>
+                    Best of LamaTube
+                </Title>
                 <Hr />
 
                 <Item>
