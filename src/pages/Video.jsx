@@ -101,7 +101,7 @@ const Video = () => {
         <Container>
             <Content>
                 <VideoWrapper>
-                    {/* <iframe
+                    <iframe
                         width="100%"
                         height="720"
                         src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
@@ -109,7 +109,7 @@ const Video = () => {
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen>
-                    </iframe> */}
+                    </iframe>
                 </VideoWrapper>
                 <Title>YouTube video player</Title>
                 <Details>

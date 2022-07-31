@@ -28,6 +28,9 @@ const Container = styled.div`
     overflow: scroll;
     position: sticky;
     top: 0;
+    &::-webkit-scrollbar {
+    display: none;
+    }
 `;
 const Wrapper = styled.div`
     padding: 18px 26px;
@@ -114,12 +117,14 @@ function Menu({ darkMode, setDarkMode }) {
                 </Item>
                 <Hr />
 
-                <Login>
-                    Sign in to videos, comment, and subscribe.
-                    <Button>
-                        <AccountCircleOutlinedIcon />
-                        SIGN IN
-                    </Button>
+                <Login >
+                    <Link to="signin" style={{ color: "inherit" }}> 
+                        Sign in to videos, comment, and subscribe.
+                        <Button>
+                            <AccountCircleOutlinedIcon />
+                            SIGN IN
+                        </Button>
+                    </Link>
                 </Login>
                 <Hr />
 
