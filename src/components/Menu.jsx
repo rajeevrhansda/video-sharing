@@ -24,9 +24,9 @@ const Container = styled.div`
     height: 100vh;
     color: white;
     font-size: 14px;
-    /* overflow: scroll;
+    overflow: scroll;
     position: sticky;
-    top: 0; */
+    top: 0;
 `;
 const Wrapper = styled.div`
     padding: 18px 26px;
