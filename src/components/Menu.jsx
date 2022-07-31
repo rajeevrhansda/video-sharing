@@ -48,6 +48,9 @@ const Item = styled.div`
     gap: 20px;
     cursor: pointer;
     padding: 7.5px 0px;
+    &:hover{
+        background-color: ${({ theme }) => theme.soft};;
+    }
 `;
 const Hr = styled.hr`
     margin: 15px 0px;
@@ -81,7 +84,7 @@ function Menu({ darkMode, setDarkMode }) {
     return (
         <Container>
             <Wrapper>
-                <Link to="/" style={{color:"inherit"}}>
+                <Link to="/" style={{ color: "inherit" }}>
                     <Logo>
                         <Img src={LamaTube} />
                         LamaTube
