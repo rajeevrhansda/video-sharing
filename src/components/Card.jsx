@@ -3,20 +3,24 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components'
 
 const Container = styled.div`
-    width: 360px;
-    margin-bottom: 45px;
+    width: ${(props)=>props.type !== "sm" && "360px"};
+    margin-bottom: ${(props)=>props.type=== "sm" ? "10px" : "45px"};
     cursor: pointer;
+    display: ${(props)=>props.type=== "sm" && "flex"};
+    gap: 10px;
 `;
 const Image = styled.img`
     width: 100%;
-    height: 202px;
+    height: ${(props)=>props.type=== "sm" ? "100px" : "202px"};
     background-color: #999;
     object-fit: cover;
+    flex: 1;
 `;
 const Details = styled.div`
     display: flex;
-    margin-top: 16px;
+    margin-top: ${(props)=>props.type !== "sm" && "16px"};
     gap: 12px;
+    flex: 1;
 `;
 const ChannelImage = styled.img`
     width: 36px;
@@ -24,6 +28,8 @@ const ChannelImage = styled.img`
     border-radius: 50%;
     object-fit: cover;
     background-color: #999;
+    display: ${(props)=>props.type=== "sm" && "none"};
+
 `;
 const Texts = styled.div`
     
@@ -46,13 +52,13 @@ const Info = styled.div`
 
 
 
-const Card = () => {
+const Card = ({type}) => {
     return (
         <Link to='/video/test'>
-            <Container>
-                <Image src="https://i9.ytimg.com/vi_webp/k3Vfj-e1Ma4/mqdefault.webp?v=6277c159&sqp=CIjm8JUG&rs=AOn4CLDeKmf_vlMC1q9RBEZu-XQApzm6sA" />
-                <Details>
-                    <ChannelImage src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
+            <Container type={type}>
+                <Image type={type} src="https://i9.ytimg.com/vi_webp/k3Vfj-e1Ma4/mqdefault.webp?v=6277c159&sqp=CIjm8JUG&rs=AOn4CLDeKmf_vlMC1q9RBEZu-XQApzm6sA" />
+                <Details type={type}>
+                    <ChannelImage type={type} src="https://yt3.ggpht.com/yti/APfAmoE-Q0ZLJ4vk3vqmV4Kwp0sbrjxLyB8Q4ZgNsiRH=s88-c-k-c0x00ffffff-no-rj-mo" />
                     <Texts>
                         <Title>Test video</Title>
                         <ChannelName>Lama Dev</ChannelName>
