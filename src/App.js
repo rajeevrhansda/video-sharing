@@ -1,10 +1,30 @@
-import './App.css';
+import styled from 'styled-components';
+import Menu from './components/Menu';
+import Navbar from './components/Navbar';
+
+const Container = styled.div`
+display: flex;
+
+`
+const Main = styled.div`
+flex: 7;
+`
+
+const Wrapper = styled.div`
+
+`
 
 function App() {
   return (
-    <div className="app">
-      <h1>Video Sharing</h1>
-    </div>
+    <Container>
+      <Menu />
+      <Main>
+        <Navbar />
+        <Wrapper>
+          video card
+        </Wrapper>
+      </Main>
+    </Container>
   );
 }
 
