@@ -22,7 +22,7 @@ const Container = styled.div`
     flex: 1;
     background-color: ${({theme})=> theme.bg};
     height: 100vh;
-    color: white;
+    color:${({theme})=> theme.text};
     font-size: 14px;
     overflow: scroll;
     position: sticky;
@@ -50,7 +50,7 @@ const Item = styled.div`
 `;
 const Hr = styled.hr`
     margin: 15px 0px;
-    border: 0.5px solid  #373737;
+    border: 0.5px solid  ${({theme})=> theme.soft};
 `;
 const Login = styled.div`
 
