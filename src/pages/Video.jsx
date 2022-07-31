@@ -4,6 +4,7 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
+import Comments from '../components/Comments';
 
 const Container = styled.div`
     display: flex;
@@ -99,15 +100,15 @@ const Video = () => {
         <Container>
             <Content>
                 <VideoWrapper>
-                    <iframe
+                    {/* <iframe
                         width="100%"
                         height="720"
                         src="https://www.youtube.com/embed/k3Vfj-e1Ma4"
                         title="YouTube video player"
-                        frameborder="0"
+                        frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen>
-                    </iframe>
+                        allowFullScreen>
+                    </iframe> */}
                 </VideoWrapper>
                 <Title>YouTube video player</Title>
                 <Details>
@@ -139,6 +140,8 @@ const Video = () => {
                     </ChannelInfo>
                     <Subscribe>Subscribe</Subscribe>
                 </Channel>
+                <Hr />
+                <Comments/>
             </Content>
             <Recommendation>Recommendation</Recommendation>
         </Container>
