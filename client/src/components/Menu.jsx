@@ -97,14 +97,18 @@ function Menu({ darkMode, setDarkMode }) {
                     <HomeIcon />
                     Home
                 </Item>
-                <Item>
-                    <ExploreOutlinedIcon />
-                    Explore
-                </Item>
-                <Item>
-                    <SubscriptionsOutlinedIcon />
-                    Subscriptions
-                </Item>
+                <Link to='trends' style={{ color: "inherit" }}>
+                    <Item>
+                        <ExploreOutlinedIcon />
+                        Explore
+                    </Item>
+                </Link>
+                <Link to='subscriptions' style={{ color: "inherit" }}>
+                    <Item>
+                        <SubscriptionsOutlinedIcon />
+                        Subscriptions
+                    </Item>
+                </Link>
                 <Hr />
 
                 <Item>
@@ -118,7 +122,7 @@ function Menu({ darkMode, setDarkMode }) {
                 <Hr />
 
                 <Login >
-                    <Link to="signin" style={{ color: "inherit" }}> 
+                    <Link to="signin" style={{ color: "inherit" }}>
                         Sign in to videos, comment, and subscribe.
                         <Button>
                             <AccountCircleOutlinedIcon />
