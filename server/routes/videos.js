@@ -26,9 +26,9 @@ router.get("/find/:id", getVideo);
 
 router.put("/view/:id", addView);
 
-router.get("/trend", random);
+router.get("/trend", trend);
 
-router.get("/random", trend);
+router.get("/random", random);
 
 router.get("/sub", verifyToken, sub);
 
