@@ -2,6 +2,8 @@ import mongoose from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
 import userRoutes from './routes/users.js';
+import commentRoutes from './routes/comments.js';
+import videoRoutes from './routes/videos.js';
 const app = express();
 dotenv.config();
 
@@ -23,6 +25,8 @@ app.get('/', (req, res) => {
 });
 
 app.use("/api/users", userRoutes);
+app.use("/api/comments", commentRoutes);
+app.use("/api/videos", videoRoutes);
 
 app.listen(8800, () => {
     connect();

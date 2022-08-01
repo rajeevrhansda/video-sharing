@@ -13,9 +13,11 @@ Error [ERR_MODULE_NOT_FOUND]: Cannot find module
 import { test } from "../controllers/user";      ERROR
 import { test } from "../controllers/user.js";   SOLUTION
 ================================================================
-
+commit added routes, controllers, url res log 3b424f4e8d5412ba62d4a7a1bb967dea5596f5a4
 http://localhost:8800/api/users/test
 Terminal
 Server is running
 Connected to DB
 test is working
+================================================================
+
