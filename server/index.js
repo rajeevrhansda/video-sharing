@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 import express from 'express';
 import dotenv from 'dotenv';
+import authRoutes from './routes/auth.js';
 import userRoutes from './routes/users.js';
 import commentRoutes from './routes/comments.js';
 import videoRoutes from './routes/videos.js';
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
     res.send('MongoDB Server!')
 });
 
+app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/comments", commentRoutes);
 app.use("/api/videos", videoRoutes);
