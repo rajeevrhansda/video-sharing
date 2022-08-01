@@ -22,6 +22,8 @@ export const signin = async (req, res, next) => {
 
         const isCorrect = await bcrypt.compare(req.body.password, user.password);
         if (!isCorrect) return next(createError(404, "Wrong password"));
+        
+        const token  = jwt.sign({id: user._id}, process.env.JWT);
     } catch (err) {
         next(err);
     }
