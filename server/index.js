@@ -25,6 +25,7 @@ app.get('/', (req, res) => {
     res.send('MongoDB Server!')
 });
 
+app.use(express.json());
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/comments", commentRoutes);
