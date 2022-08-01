@@ -2,3 +2,20 @@ admin
 qweasd
 
 'mongodb://admin:qweasd@cluster0-shard-00-00.k72iz.mongodb.net:27017,cluster0-shard-00-01.k72iz.mongodb.net:27017,cluster0-shard-00-02.k72iz.mongodb.net:27017/myDB?ssl=true&replicaSet=atlas-27vl2r-shard-0&authSource=admin&retryWrites=true&w=majority'
+
+================================================================
+in Router/users
+node:internal/errors:465
+    ErrorCaptureStackTrace(err);
+    ^
+Error [ERR_MODULE_NOT_FOUND]: Cannot find module
+
+import { test } from "../controllers/user";      ERROR
+import { test } from "../controllers/user.js";   SOLUTION
+================================================================
+
+http://localhost:8800/api/users/test
+Terminal
+Server is running
+Connected to DB
+test is working
