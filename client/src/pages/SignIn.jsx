@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -64,18 +65,31 @@ const Link = styled.span`
 `;
 
 function SignIn() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post("/auth/signin", { name, password });
+      console.log(res.data);
+    } catch (err) {
+    }
+  };
+
     return (
         <Container>
             <Wrapper>
                 <Title>Sign In</Title>
                 <SubTitle>to continue to Lama Dev</SubTitle>
-                <Input type="text" placeholder='username' />
-                <Input type="password" placeholder='password' />
-                <Button>Sign In</Button>
+                <Input type="text" placeholder='username' onChange={(e)=> setName(e.target.value)} autocomplete="on"/>
+                <Input type="password" placeholder='password' onChange={(e)=> setPassword(e.target.value)} autocomplete="on"/>
+                <Button onClick={handleLogin}>Sign In</Button>
                 <Title>or</Title>
-                <Input type="text" placeholder='username' />
-                <Input type="email" placeholder='email' />
-                <Input type="password" placeholder='password' />
+                <Input type="text" placeholder='username' autocomplete="on"/>
+                <Input type="email" placeholder='email' autocomplete="on"/>
+                <Input type="password" placeholder='password' autocomplete="on"/>
                 <Button>Sign Up</Button>
             </Wrapper>
             <More>
