@@ -65,7 +65,7 @@ const Avatar = styled.img`
 `;
 
 function Navbar() {
-    const { currentUser } = useSelector(state => state.user)
+    const { currentUser } = useSelector(state => state.user);
     return (
         <Container>
             <Wrapper>

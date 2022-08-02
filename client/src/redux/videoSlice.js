@@ -10,10 +10,20 @@ export const videoSlice = createSlice({
     name: "video",
     initialState,
     reducers: {
-        
+        fetchStart: (state) => {
+            state.loading = true;
+        },
+        fetchSuccess: (state, action) => {
+            state.loading = false;
+            state.currentVideo = action.payload;
+        },
+        fetchFailure: (state) => {
+            state.loading = false;
+            state.error = true;
+        },
     },
 });
 
-export const {  } =    videoSlice.actions;
+export const { fetchStart, fetchSuccess, fetchFailure } = videoSlice.actions;
 
 export default videoSlice.reducer;
