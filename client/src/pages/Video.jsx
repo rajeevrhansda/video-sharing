@@ -5,6 +5,8 @@ import ThumbUpOutlinedIcon from "@mui/icons-material/ThumbUpOutlined";
 import ThumbDownOffAltOutlinedIcon from "@mui/icons-material/ThumbDownOffAltOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
+import ThumbUpIcon from "@mui/icons-material/ThumbUp";
+import ThumbDownIcon from "@mui/icons-material/ThumbDown";
 import Comments from '../components/Comments';
 import Card from '../components/Card';
 import { useLocation } from 'react-router-dom';
@@ -123,6 +125,14 @@ const Video = () => {
         fetchData();
     }, [path, dispatch]);
 
+    const handleLike = async () => {
+        await axios.put(`/users/like/${currentVideo._id}`);
+
+    };
+    const handleDislike = async () => {
+        await axios.put(`/users/dislike/${currentVideo._id}`);
+    };
+
 
 
     return (
@@ -143,11 +153,21 @@ const Video = () => {
                 <Details>
                     <Info>{currentVideo.views} views {/*format(currentVideo.createdAt)*/} {currentVideo.createdAt}</Info>
                     <Buttons>
-                        <Button>
-                            <ThumbUpOutlinedIcon /> {currentVideo.likes?.length}
+                        <Button onClick={handleLike}>
+                            {currentVideo.likes?.includes(currentUser?._id) ? (
+                                <ThumbUpIcon />
+                            ) : (
+                                <ThumbUpOutlinedIcon />
+                            )}{" "}
+                            {currentVideo.likes?.length}
                         </Button>
-                        <Button>
-                            <ThumbDownOffAltOutlinedIcon /> {currentVideo.dislikes}
+                        <Button onClick={handleDislike}>
+                            {currentVideo.dislikes?.includes(currentUser?._id) ? (
+                                <ThumbDownIcon />
+                            ) : (
+                                <ThumbDownOffAltOutlinedIcon />
+                            )}{" "}
+                            Dislike
                         </Button>
                         <Button>
                             <ReplyOutlinedIcon /> Share
